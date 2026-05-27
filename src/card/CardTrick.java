@@ -63,6 +63,11 @@ public class CardTrick {
             System.out.println("\nThe magic hand contained:"); // added extra wanted to debug but i like that it shows me
             for (Card c : magicHand) {
                 System.out.print(c.getValue() + " of " + c.getSuit()+",");}
+            
+            Card luckyCard= new Card(); //from GitHub to add a (hard-coded) Card Object called luckyCard with a card number and suit of your choosing.
+            luckyCard.setValue(10);
+            luckyCard.setSuit("clubs");
+            
 }
     }    
 }
