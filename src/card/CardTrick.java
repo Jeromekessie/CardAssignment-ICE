@@ -11,6 +11,10 @@ import java.util.Scanner;
  * and then asks the user to pick a card and searches the array of cards
  * for the match to the user's card. To be used as starting code in ICE 1
  * @author srinivsi
+ * 
+ * @author Jerome Duah-Kessie
+ * Student ID:991581686
+ * 
  */
 public class CardTrick {
     
@@ -33,22 +37,29 @@ public class CardTrick {
             magicHand[i] =c;
         }
         
-        Scanner input = new Scanner(System.in);
-        System.out.println("Pick a card value (1-13): ");
-        int userCardValue = input.nextInt();
-        System.out.println("Pick a suit (Hearts, Diamonds, Spades, Clubs): ");
-        String userCardSuit = input.next();
+        // step 7 replace with hard coded card
+//        Scanner input = new Scanner(System.in);
+//        System.out.println("Pick a card value (1-13): ");
+//        int userCardValue = input.nextInt();
+//        System.out.println("Pick a suit (Hearts, Diamonds, Spades, Clubs): ");
+//        String userCardSuit = input.next();
+//        
+//        
+//        
+//        Card userCard = new Card();
+//        userCard.setValue(userCardValue);
+//        userCard.setSuit(userCardSuit);
         
-        Card userCard = new Card();
-        userCard.setValue(userCardValue);
-        userCard.setSuit(userCardSuit);
+        Card luckyCard= new Card(); //from GitHub to add a (hard-coded) Card Object called luckyCard with a card number and suit of your choosing.
+            luckyCard.setValue(10);
+            luckyCard.setSuit("clubs");
         
         boolean found = false;
         for (Card card : magicHand) {
             // Check value first
-            if (card.getValue() == userCardValue) {
+            if (card.getValue() == luckyCard.getValue()) { //changed
                 // If value matches, check the suit
-                if (card.getSuit().equalsIgnoreCase(userCardSuit)) {
+                if (card.getSuit().equalsIgnoreCase(luckyCard.getSuit())) { //changed
                     found = true;
                     break; // Stop searching once a match is found
                 }
@@ -58,16 +69,14 @@ public class CardTrick {
         if (found) {
             System.out.println("Congrats! Your card is in the magic hand!!!!.");
         } else {
-            System.out.println("Sorry! your card is not in the magic hand.\nYou picked: "+ userCardValue+" of "+userCardSuit);
+            System.out.println("Sorry! you lose!!!.");
             
-            System.out.println("\nThe magic hand contained:"); // added extra wanted to debug but i like that it shows me
-            for (Card c : magicHand) {
-                System.out.print(c.getValue() + " of " + c.getSuit()+",");}
-            
-            Card luckyCard= new Card(); //from GitHub to add a (hard-coded) Card Object called luckyCard with a card number and suit of your choosing.
-            luckyCard.setValue(10);
-            luckyCard.setSuit("clubs");
+//            System.out.println("\nThe magic hand contained:"); // added extra wanted to debug but i like that it shows me
+//            for (Card c : magicHand) {
+//                System.out.print(c.getValue() + " of " + c.getSuit()+",");}
             
 }
     }    
 }
+/*Jerome Duah-Kessie
+ Student ID:991581686 */
